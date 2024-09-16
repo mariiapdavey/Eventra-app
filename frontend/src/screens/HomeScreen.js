@@ -10,7 +10,7 @@ const HomeScreen = () => {
         <Row>
             {events.map(e => (
                 <Col sm={12} md={6} lg={4} xl={3}>
-                    <Product event={e} />
+                    <EventList event={e} />
                 </Col>
             ))}
         </Row>

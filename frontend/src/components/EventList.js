@@ -11,7 +11,7 @@ const EventList = ({event}) => {
             </Card.Title>
 
             <Card.Text as='div'>
-                <{event.location}>
+                {event.location}
             </Card.Text>
            
             <Card.Text as='h3'>

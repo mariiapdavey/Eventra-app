@@ -66,3 +66,5 @@ const events = [
         numFollowers: 123
     },
 ]
+
+export default events
