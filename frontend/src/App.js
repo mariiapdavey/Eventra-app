@@ -1,8 +1,12 @@
+import Header from "./components/header";
 
 const App = () => {
   return (
     <div>
-      <h1>Welcome to Eventra!</h1>
+      <Header />
+      <main>
+        <h1>Welcome to Eventra!</h1>
+      </main>
     </div>
   );
 }
