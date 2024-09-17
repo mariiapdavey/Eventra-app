@@ -1,5 +1,5 @@
 import React from 'react';
-import events from '../events';
+import events from '../Events';
 import EventList from '../components/EventList';
 import { Col, Row } from 'react-bootstrap';
 

@@ -7,11 +7,13 @@ const EventList = ({event}) => {
         <Card.Img src={event.image} variant='top' />
         <Card.Body>
             <Card.Title as='div'>
-                <strong>{event.name}</strong>
+                <strong>{event.eventName}</strong>
             </Card.Title>
 
             <Card.Text as='div'>
-                {event.location}
+                {event.venue.name}
+                < br />
+                {event.venue.address}
             </Card.Text>
            
             <Card.Text as='h3'>
