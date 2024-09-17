@@ -26,8 +26,11 @@ const EventScreen = () => {
             <ListGroup.Item>
                 <h3>{event.eventName}</h3>
             </ListGroup.Item>
-            
-            <ListGroup.Item>About this event: {event.description}  </ListGroup.Item>
+            <ListGroup.Item>
+              <h5><strong>About this event:</strong></h5>
+              <br/>
+              {event.description}  
+            </ListGroup.Item>
 
           </ListGroup>
       </Col>
