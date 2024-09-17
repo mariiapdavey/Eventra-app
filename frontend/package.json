@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "EventraApp-frontend",
-=======
   "name": "eventra-frontend",
->>>>>>> master
   "version": "1.0.0",
   "private": true,
   "dependencies": {
