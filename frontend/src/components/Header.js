@@ -6,11 +6,11 @@ const Header = () => {
     <header>
       <Navbar expand="lg" bg="dark" variant="dark">
         <Container fluid>
-          <Navbar.Brand href="/" color='red'>Eventra</Navbar.Brand>
+          <Navbar.Brand href="/">Eventra</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Form className="d-flex">
-              <div class="input-group">
+              <div className="input-group">
                 <InputGroup.Text id="basic-addon1"><i className="fa-solid fa-magnifying-glass"></i></InputGroup.Text>
                 <Form.Control
                 type="search"
@@ -36,6 +36,7 @@ const Header = () => {
             navbarScroll
           >
             <Nav.Link href="/findevents">Find Events</Nav.Link>
+            <Nav.Link href="/cart"><i class="fa-solid fa-cart-plus"></i>Cart</Nav.Link>
             <Nav.Link href="/login"><i className="fas fa-user"></i>Sign In</Nav.Link>  
           </Nav>
           </Navbar.Collapse>
