@@ -7,7 +7,7 @@ const HomeScreen = () => {
   return (
     <>
         <h1>Latest Events</h1>
-        <Row>
+        <Row className="g-3">
             {events.map(e => (
                 <Col sm={12} md={6} lg={4} xl={3}>
                     <EventList event={e} />
