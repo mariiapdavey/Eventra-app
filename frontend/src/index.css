@@ -43,6 +43,14 @@ h1 {
   transition: transform 0.3s ease;
 }
 
+.event-link {
+  text-decoration: none;
+}
+
+.event-link:hover {
+  color: rgb(93, 20, 52);
+}
+
 .cards .card-body {
   flex-grow: 1;
   display: flex;

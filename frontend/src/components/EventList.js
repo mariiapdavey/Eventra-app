@@ -9,7 +9,7 @@ const EventList = ({event}) => {
           <Card.Img src={event.image} variant='top' />
         </Link>
         <Card.Body>
-          <Link to={`/event/${event._id}`}>
+          <Link to={`/event/${event._id}`} className="event-link">
             <Card.Title as='div'>
                 <strong>{event.eventName}</strong>
             </Card.Title>
