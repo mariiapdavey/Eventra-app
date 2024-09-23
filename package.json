@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mariiapdavey/Eventra-app/issues"
   },
-  "homepage": "https://github.com/mariiapdavey/Eventra-app#readme"
+  "homepage": "https://github.com/mariiapdavey/Eventra-app#readme",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
 }
