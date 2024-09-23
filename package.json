@@ -1,0 +1,22 @@
+{
+  "name": "eventra-app",
+  "version": "1.0.0",
+  "description": "React event app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariiapdavey/Eventra-app.git"
+  },
+  "author": "Marisa Diaz, Mariia Pozhar, Ritu Sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariiapdavey/Eventra-app/issues"
+  },
+  "homepage": "https://github.com/mariiapdavey/Eventra-app#readme",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
