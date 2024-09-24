@@ -103,5 +103,7 @@ const events = [
       category: 'Music'
     }
   ];
+
+  module.exports = events
   
-  export default events
+  // export default events
