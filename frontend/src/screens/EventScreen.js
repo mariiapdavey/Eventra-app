@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { useParams, Link } from 'react-router-dom';
 import {Row, Col, Image, Card, Button, ListGroup} from 'react-bootstrap';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+
 
 
 const EventScreen = () => {
@@ -14,7 +14,7 @@ const EventScreen = () => {
      const fetchEvent = async () => {
       const {data} = await axios.get(`/apa/event/$
       {params.id}`)
-      setProduct(data)
+      setEvent(data)
      }
 
      fetchEvent()
