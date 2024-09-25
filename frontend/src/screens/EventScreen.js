@@ -12,8 +12,7 @@ const EventScreen = () => {
 
   useEffect (() =>{
      const fetchEvent = async () => {
-      const {data} = await axios.get(`/apa/event/$
-      {params.id}`)
+      const { data } = await axios.get(`/api/event/${params.id}`);
       setEvent(data)
      }
 
@@ -52,8 +51,8 @@ const EventScreen = () => {
         <ListGroup variant='flush'>
             <ListGroup.Item> <strong>When:</strong> {event.date} </ListGroup.Item>
             <ListGroup.Item> <strong>Time:</strong> {event.time} </ListGroup.Item>
-            <ListGroup.Item><strong>Venue:</strong> {event.venue.name} </ListGroup.Item>
-            <ListGroup.Item><strong>Address:</strong> {event.venue.address} </ListGroup.Item>
+            <ListGroup.Item><strong>Venue:</strong> {event.venue?.name || 'Venue not available'} </ListGroup.Item>
+            <ListGroup.Item><strong>Address:</strong> {event.venue?.address || 'Address not available'} </ListGroup.Item>
       
             <Card className="card-price h-100 d-flex flex-column justify-content-between"> 
               <ListGroup variant='flush'>
