@@ -1,10 +1,18 @@
 import React, {useEffect, useState} from 'react';
+<<<<<<< HEAD
 import axios from 'axios';
+=======
+import axios from 'axios'
+>>>>>>> master
 import EventList from '../components/EventList';
 import { Col, Row } from 'react-bootstrap';
 
 const HomeScreen = () => {
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> master
   const [events, setEvents] = useState([])
 
   useEffect(() => {

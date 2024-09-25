@@ -103,5 +103,11 @@ const events = [
       category: 'Music'
     }
   ];
+
+  module.exports = events
   
+<<<<<<< HEAD
 module.exports = events
+=======
+  // export default events
+>>>>>>> master

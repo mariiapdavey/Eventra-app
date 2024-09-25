@@ -2,10 +2,16 @@ import React, {useEffect, useState} from 'react';
 import { useParams, Link } from 'react-router-dom';
 import {Row, Col, Image, Card, Button, ListGroup} from 'react-bootstrap';
 import axios from 'axios';
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 
 
 const EventScreen = () => {
+
   const params = useParams();
+<<<<<<< HEAD
   const [events, setEvent] = useState({})
   
   useEffect(() => {
@@ -15,6 +21,17 @@ const EventScreen = () => {
     }
 
     fetchEvent()
+=======
+  const [event, setEvent] = useState({})
+
+  useEffect (() =>{
+     const fetchEvent = async () => {
+      const { data } = await axios.get(`/api/event/${params.id}`);
+      setEvent(data)
+     }
+
+     fetchEvent()
+>>>>>>> master
   })
 
   return (
@@ -49,8 +66,8 @@ const EventScreen = () => {
         <ListGroup variant='flush'>
             <ListGroup.Item> <strong>When:</strong> {event.date} </ListGroup.Item>
             <ListGroup.Item> <strong>Time:</strong> {event.time} </ListGroup.Item>
-            <ListGroup.Item><strong>Venue:</strong> {event.venue.name} </ListGroup.Item>
-            <ListGroup.Item><strong>Address:</strong> {event.venue.address} </ListGroup.Item>
+            <ListGroup.Item><strong>Venue:</strong> {event.venue?.name || 'Venue not available'} </ListGroup.Item>
+            <ListGroup.Item><strong>Address:</strong> {event.venue?.address || 'Address not available'} </ListGroup.Item>
       
             <Card className="card-price h-100 d-flex flex-column justify-content-between"> 
               <ListGroup variant='flush'>
