@@ -104,10 +104,5 @@ const events = [
     }
   ];
 
-  module.exports = events
-  
-<<<<<<< HEAD
-module.exports = events
-=======
-  // export default events
->>>>>>> master
+ 
+export default events
