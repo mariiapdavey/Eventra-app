@@ -1,6 +1,5 @@
 const events = [
     {
-      _id: '1',
       eventName: 'Whitney Mongé w/ Alec Shaw',
       image:'/images/1.jpg',
       date: 'Wednesday, September 18, 2024',
@@ -15,7 +14,6 @@ const events = [
       category: 'Music'
     },
     {
-      _id: '2',
       eventName: 'Foleada',
       image:'/images/2.jpg',
       date: 'Tuesday, September 17, 2024',
@@ -29,7 +27,6 @@ const events = [
       category: 'Music'
     },
     {
-      _id: '3',
       eventName: 'Soul Coughing Reunion Tour',
       image:'/images/3.jpg',
       date: 'Wednesday, September 18, 2024',
@@ -44,7 +41,6 @@ const events = [
       category: 'Music'
     },
     {
-      _id: '4',
       eventName: 'Palaye Royale with Diamante, Weathers, and I See Stars',
       image:'/images/4.jpg',
       date: 'Thursday, September 19, 2024',
@@ -59,7 +55,6 @@ const events = [
       category: 'Music'
     },
     {
-      _id: '5',
       eventName: 'Colde "BLUEPRINT" North America Tour 2024',
       image:'/images/5.jpg',
       date: 'Friday, September 20, 2024',
@@ -73,7 +68,6 @@ const events = [
       category: 'Music'
     },
     {
-      _id: '6',
       eventName: 'Lisa Fox Group',
       image:'/images/6.jpg',
       date: 'Saturday, September 21, 2024',
@@ -88,7 +82,6 @@ const events = [
       category: 'Music'
     },
     {
-      _id: '7',
       eventName: 'Tori Kelly with Maisy Kay',
       image:'/images/7.jpg',
       date: 'Saturday, September 21, 2024',
@@ -104,6 +97,5 @@ const events = [
     }
   ];
 
-  module.exports = events
-  
-  // export default events
+ 
+export default events
