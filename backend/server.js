@@ -1,16 +1,14 @@
 import express from 'express'
 import dotenv from 'dotenv'
-import events from './data/Events.js'
 import connectDB from './config/db.js'
 import errorHandler from './middleware/errorMiddleware.js'
+import eventRoutes from './routes/eventRoutes.js'
 
 const app = express()
 dotenv.config()
 connectDB()
 
-app.get('/api/events', (req, res) => {
-    res.json(events)
-})
+app.use('/api/events', eventRoutes)
 
 app.use(errorHandler)
 
