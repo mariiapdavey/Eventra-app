@@ -1,7 +1,7 @@
-import {configureStore, combineRreducers} from '@reduxjs/toolkit'
+import {configureStore, combineReducers} from '@reduxjs/toolkit'
 import { eventListReducer } from './reducers/eventReducers'
 
-const rootReducer = combineRreducers({
+const rootReducer = combineReducers({
     eventList: eventListReducer
 })
 
