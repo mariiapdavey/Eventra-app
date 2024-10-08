@@ -12,6 +12,9 @@ const HomeScreen = () => {
     dispatch(listEvents())
   })
 
+  const eventList = useSelector((state) => state.eventList)
+  const {loading, events, error} = eventList
+
   return (
     <>
         <h1>Latest Events</h1>
