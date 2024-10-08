@@ -1,19 +1,15 @@
-import React, {useEffect, useState} from 'react';
-import axios from 'axios'
-import EventList from '../components/EventList';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import { Col, Row } from 'react-bootstrap';
+import EventList from '../components/EventList';
+import { listEvents } from '../actions/eventActions';
+
 
 const HomeScreen = () => {
 
-  const [events, setEvents] = useState([])
-
+  const dispatch = useDispatch()
   useEffect(() => {
-    const fetchEvents = async () => {
-      const {data} = await axios.get('/api/events')
-      setEvents(data)
-    }
-
-    fetchEvents()
+    dispatch(listEvents())
   })
 
   return (
