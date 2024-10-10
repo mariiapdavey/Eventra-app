@@ -1,16 +1,16 @@
 import express from 'express'
-import events from './data/Events.js'
+import dotenv from 'dotenv'
+import connectDB from './config/db.js'
+import errorHandler from './middleware/errorMiddleware.js'
+import eventRoutes from './routes/eventRoutes.js'
 
 const app = express()
+dotenv.config()
+connectDB()
 
-app.get('/api/events', (req, res) => {
-    res.json(events)
-})
+app.use('/api/events', eventRoutes)
 
-app.get('/api/event/:id', (req, res) => {
-    const event = events.find(e => e._id === req.params.id)
-    res.json(event)
-})
+app.use(errorHandler)
 
 <<<<<<< HEAD
 app.listen(5001, console.log('Server is now running on port 5001'))
