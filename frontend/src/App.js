@@ -20,7 +20,6 @@ const App = () => {
                   {<CartScreen />} />
                 <Route path="/cart/:id" element=
                   {<CartScreen />} />
-          
               </Routes>
             </Container>
           </main>
