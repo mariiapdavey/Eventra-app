@@ -5,8 +5,7 @@ export const cartReducer = (state = {cartItems:[]},
         switch (action.type){
             case CART_ADD_ITEM:
                 const item = action.payload
-                const existItem = state.cartItems.find(x => x.
-                    event === item.event)
+                const existItem = state.cartItems.find(x => x.event === item.event)
                     if (existItem){
                         item.qty = existItem.qty + item.qty
                         return {

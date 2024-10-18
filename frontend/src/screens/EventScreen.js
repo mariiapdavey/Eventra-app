@@ -16,8 +16,7 @@ const EventScreen = () => {
     dispatch(listEventDetails(params.id))
   }, [dispatch, params])
 
-const eventDetails = useSelector ((state) => state.
-eventDetails)
+const eventDetails = useSelector ((state) => state.eventDetails)
 const {loading, event, error} = eventDetails
 
 const addToCartHandler = () => {
