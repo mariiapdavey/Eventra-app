@@ -1,12 +1,14 @@
 import asyncHandler from 'express-async-handler'
 import Event from '../models/eventModel.js'
 
-export const getEvents = asyncHandler(async (req, res) => {
+//removed duplicate export
+const getEvents = asyncHandler(async (req, res) => {
   const events = await Event.find({})
   res.json(events);
 })
 
-export const getEventById = asyncHandler(async (req, res) => {
+//removed duplicate export
+const getEventById = asyncHandler(async (req, res) => {
   const event = await Event.findById(req.params.id);
 
   if (event) {
