@@ -8,18 +8,22 @@ const rootReducer = combineReducers({
     cart: cartReducer
 })
 
-const cartItemsFromStorage = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
+// Wrap in try/catch to handle potential errors with localStorage
+let cartItemsFromStorage = [];
+try{
+   cartItemsFromStorage = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
+} catch (error) {
 
-// Log cartItems for debugging
-console.log(cartItemsFromStorage);
+    console.error('Error reading cart items from localStorage:', error);
+}
 
 const initialState = {
     cart: {
-        cartItems: cartItemsFromStorage || []
+        cartItems: cartItemsFromStorage || [],
     }
 }
 
-const store = configureStore ({
+const store = configureStore({
     reducer: rootReducer,
     preloadedState: initialState    
 })
