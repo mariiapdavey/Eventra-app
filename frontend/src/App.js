@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomeScreen from './screens/HomeScreen';
 import EventScreen from "./screens/EventScreen";
-import CartScreen from './screens/CartScreen';
+import CartScreen from "./screens/CartScreen";
 
 const App = () => {
   return (
@@ -20,7 +20,6 @@ const App = () => {
                   {<CartScreen />} />
                 <Route path="/cart/:id" element=
                   {<CartScreen />} />
-          
               </Routes>
             </Container>
           </main>
