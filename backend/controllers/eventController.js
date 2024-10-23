@@ -16,4 +16,6 @@ export const getEventById = asyncHandler(async (req, res) => {
     throw new Error('Event not found');
   }
 })
-//removed duplicate export of getEventByID 
+
+export {getEvents, getEventById}
+//readded export functions because they are imported in eventRoutes.js
