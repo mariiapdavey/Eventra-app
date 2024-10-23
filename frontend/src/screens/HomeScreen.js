@@ -25,7 +25,7 @@ const HomeScreen = () => {
           error ? (<Message variant='danger'>{error}</Message>) :
           (<Row className="g-3">
             {events.map(e => (
-                <Col sm={12} md={6} lg={4} xl={3}>
+                <Col key={e._id} sm={12} md={6} lg={4} xl={3}>
                     <EventList event={e} />
                 </Col>
             ))}

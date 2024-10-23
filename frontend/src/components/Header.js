@@ -19,8 +19,8 @@ const Header = () => {
                 aria-label="Search"
                 />
               </div>
-              <div class="input-group">
-                <InputGroup.Text id="basic-addon1"><i class="fa-solid fa-location-dot"></i></InputGroup.Text>
+              <div className="input-group">
+                <InputGroup.Text id="basic-addon1"><i className="fa-solid fa-location-dot"></i></InputGroup.Text>
                 <Form.Control
                 type="search"
                 placeholder="Choose a location"
@@ -36,7 +36,7 @@ const Header = () => {
             navbarScroll
           >
             <Nav.Link href="/findevents">Find Events</Nav.Link>
-            <Nav.Link href="/cart"><i class="fa-solid fa-cart-plus"></i>Cart</Nav.Link>
+            <Nav.Link href="/cart"><i className="fa-solid fa-cart-plus"></i>Cart</Nav.Link>
             <Nav.Link href="/login"><i className="fas fa-user"></i>Sign In</Nav.Link>  
           </Nav>
           </Navbar.Collapse>
