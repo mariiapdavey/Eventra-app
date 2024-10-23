@@ -7,6 +7,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './store';
 
+// Log the resolved path of React to check for multiple instances
+console.log(require.resolve('react'));
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>

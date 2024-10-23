@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {Link, useNavigate, useParams, useLocation } from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
-import {Row, Col, ListGroup, Image, Form, Button, Card, ListGroupItem } from 'react-bootstrap'
+import {Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
 import {addToCart, removeFromCart} from '../actions/cartActions'
 import Message from '../components/Message'
 
@@ -12,8 +12,7 @@ const params = useParams()
 const dispatch = useDispatch()
 const eventId = params.id
 
-const qty = location.search ? Number(location.search.
-split('=') [1]) : 1
+const qty = location.search ? Number(location.search.split('=')[1]):1
 
 useEffect(() => {
   if (eventId) {
@@ -73,7 +72,7 @@ const checkoutHandler = () => {
                   <Col md={2}>
                       <Button 
                         type='button'
-                        cariant='light'
+                        variant='light'
                         onClick={() =>
                           removeFromCartHandler(item.event)}
                         >
@@ -105,7 +104,7 @@ const checkoutHandler = () => {
               <Button
                 type='button'
                 className='btn-block'
-                disabled={cartItems.lenght === 0}
+                disabled={cartItems.length === 0}
                 onClick={checkoutHandler}
                 >
                   Proceed To Checkout

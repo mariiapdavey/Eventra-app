@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/mariiapdavey/Eventra-app#readme",
   "dependencies": {
-    "@reduxjs/toolkit": "^2.2.7",
+    "@reduxjs/toolkit": "^2.3.0",
     "axios": "^1.7.7",
     "bcryptjs": "^2.4.3",
     "concurrently": "^9.0.1",
