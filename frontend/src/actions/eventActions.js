@@ -29,7 +29,7 @@ export const listEventDetails = (id) => async (dispatch) => {
 
         dispatch ({
             type: EVENT_DETAILS_SUCCESS,
-            pauload: data
+            payload: data
         })
     } catch (error) {
         dispatch({

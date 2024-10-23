@@ -13,7 +13,7 @@ export const eventListReducer = (state = {events: []}, action) => {
     }
 }
 
-export const eventDetailsReducer = (state = {events: []}, action) => {
+export const eventDetailsReducer = (state = {events: {}}, action) => {
         switch(action.type){
             case EVENT_DETAILS_REQUEST:
                 return {loading: true, ...state}
