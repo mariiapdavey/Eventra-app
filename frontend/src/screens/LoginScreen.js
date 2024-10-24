@@ -10,7 +10,7 @@ import FormContainer from '../components/FormContainer'
 const LoginScreen = () => {
     const location = useLocation()
     const navigate = useNavigate()
-    const dispath = useDispatch()
+    const dispatch = useDispatch()
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
