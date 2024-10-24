@@ -55,6 +55,11 @@ const eventSchema = mongoose.Schema({
         required: true,
         default: 0
     },
+    countInStock: { //added
+        type: Number,
+        required: true,
+        default: 0
+    },
     comments: [commentSchema]
 }, {
     timestamps: true

@@ -16,8 +16,9 @@ const EventScreen = () => {
     dispatch(listEventDetails(params.id))
   }, [dispatch, params])
 
-const eventDetails = useSelector ((state) => state.eventDetails)
+const eventDetails = useSelector((state) => state.eventDetails)
 const {loading, event, error} = eventDetails
+console.log('Event details from Redux', event) //added to check event object and ensure countInStock exists
 
 const addToCartHandler = () => {
   navigate(`/cart/${params.id}?qty=${qty}`)

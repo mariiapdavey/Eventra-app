@@ -26,7 +26,7 @@ export const listEventDetails = (id) => async (dispatch) => {
             type: EVENT_DETAILS_REQUEST
         })
         const {data} = await axios.get(`/api/events/${id}`)
-
+        console.log('Event Details:', data) //added to check data
         dispatch ({
             type: EVENT_DETAILS_SUCCESS,
             payload: data
