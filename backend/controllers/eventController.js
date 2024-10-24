@@ -1,12 +1,12 @@
 import asyncHandler from 'express-async-handler'
 import Event from '../models/eventModel.js'
 
-const getEvents = asyncHandler(async (req, res) => {
+export const getEvents = asyncHandler(async (req, res) => {
   const events = await Event.find({})
   res.json(events);
 })
 
-const getEventById = asyncHandler(async (req, res) => {
+export const getEventById = asyncHandler(async (req, res) => {
   const event = await Event.findById(req.params.id);
 
   if (event) {
@@ -17,5 +17,4 @@ const getEventById = asyncHandler(async (req, res) => {
   }
 })
 
-export {getEvents, getEventById}
-//readded export functions because they are imported in eventRoutes.js
+
