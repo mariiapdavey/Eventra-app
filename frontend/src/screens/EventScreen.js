@@ -14,7 +14,8 @@ const EventScreen = () => {
 
   useEffect (() =>{
     dispatch(listEventDetails(params.id))
-  }, [dispatch, params])
+    setQty(1) //added to reset qty to 1 after selecting a new event
+  }, [dispatch, params.id])
 
 const eventDetails = useSelector((state) => state.eventDetails)
 const {loading, event, error} = eventDetails
