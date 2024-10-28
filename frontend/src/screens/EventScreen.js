@@ -10,16 +10,21 @@ const EventScreen = () => {
   const [qty, setQty] = useState(1);
   const params = useParams();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  useEffect (() =>{
-    dispatch(listEventDetails(params.id))
-    setQty(1) //added to reset qty to 1 after selecting a new event
-  }, [dispatch, params.id])
+  const navigate = useNavigate();  
 
 const eventDetails = useSelector((state) => state.eventDetails)
 const {loading, event, error} = eventDetails
-console.log('Event details from Redux', event) //added to check event object and ensure countInStock exists
+
+useEffect(() => {
+  dispatch(listEventDetails(params.id))
+}, [dispatch, params.id, event.countInStock])
+
+//update quantity when event changes
+useEffect(() => {
+  if (event && event.countInStock) {
+    setQty(1)
+  }
+}, [event])
 
 const addToCartHandler = () => {
   navigate(`/cart/${params.id}?qty=${qty}`)
@@ -89,7 +94,7 @@ const addToCartHandler = () => {
                               <Form.Control
                                 as='select'
                                 value={qty}
-                                onChange={e => setQty(e.target.value)}
+                                onChange={e => setQty(Number(e.target.value))}
                                 >
                                 {
                                   [...Array(event.countInStock).keys()].map(x => (

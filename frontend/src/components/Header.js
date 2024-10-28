@@ -1,8 +1,9 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import {Container, Navbar, Nav, NavDropdown, Form, Button, InputGroup} from 'react-bootstrap'
-import {LinkContainer} from 'react-router-bootstrap'
-import { logout } from '../actions/userActions';
+import {Link} from 'react-router-dom'
+import { LinkContainer } from 'react-router-bootstrap'
+import { logout } from '../actions/userActions'
 
 const Header = () => {
 
@@ -23,7 +24,7 @@ const Header = () => {
           <Navbar.Collapse id="navbarScroll">
             <Form className="d-flex">
               <div className="input-group">
-                <InputGroup.Text id="basic-addon1"><i className="fa-solid fa-magnifying-glass"></i></InputGroup.Text>
+                <InputGroup.Text id="basic-addon1"><i className="fas fa-search"></i></InputGroup.Text>
                 <Form.Control
                 type="search"
                 placeholder="Search events"
@@ -32,7 +33,7 @@ const Header = () => {
                 />
               </div>
               <div className="input-group">
-                <InputGroup.Text id="basic-addon1"><i className="fa-solid fa-location-dot"></i></InputGroup.Text>
+                <InputGroup.Text id="basic-addon1"><i className="fas fa-map-marker-alt"></i></InputGroup.Text>
                 <Form.Control
                 type="search"
                 placeholder="Choose a location"
@@ -49,7 +50,7 @@ const Header = () => {
           >
             <Nav.Link href="/findevents">Find Events</Nav.Link>
             <LinkContainer to="/cart">
-              <Nav.Link><i className='fas-fa-cart-plus'></i> Cart</Nav.Link>
+              <Nav.Link><i className='fas fa-cart-plus'></i> Cart</Nav.Link>
             </LinkContainer>
             {userInfo? (
               <NavDropdown title={userInfo.name} id='userName'>
@@ -58,9 +59,9 @@ const Header = () => {
                 </LinkContainer>
                 <NavDropdown.Item onClick={logoutHandler}> Logout</NavDropdown.Item>
               </NavDropdown>
-            ): (<LinkContainer to="/login">
-              <Nav.Link><i className='fas-fa-user'></i> Sign In</Nav.Link>
-              </LinkContainer>)}
+            ): (<Nav.Link as={Link} to="/login">
+              <i className="fas fa-user"></i> Sign In
+            </Nav.Link>)} 
           </Nav>
           </Navbar.Collapse>
         </Container>
