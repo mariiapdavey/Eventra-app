@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import {Row, Col, Image, Card, Button, ListGroup, Form} from 'react-bootstrap';
 import { listEventDetails } from '../actions/eventActions';
+import { addToCart } from '../actions/cartActions';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 
@@ -17,7 +18,7 @@ const {loading, event, error} = eventDetails
 
 useEffect(() => {
   dispatch(listEventDetails(params.id))
-}, [dispatch, params.id, event.countInStock])
+}, [dispatch, params.id])
 
 //update quantity when event changes
 useEffect(() => {
