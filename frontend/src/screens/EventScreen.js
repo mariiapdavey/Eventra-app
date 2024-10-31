@@ -22,7 +22,6 @@ useEffect(() => {
 
 useEffect(() => {
   if (event) {
-    console.log('Count in Stock:', event.countInStock);
     if (event.countInStock) {
       setQty(1)
     }
