@@ -7,6 +7,8 @@ import EventScreen from "./screens/EventScreen";
 import CartScreen from "./screens/CartScreen";
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
+import ShippingScreen from './screens/ShippingScreen';
+import PlaceOrderScreen from './screens/PlaceOrderScreen';
 
 const App = () => {
   return (
@@ -18,12 +20,11 @@ const App = () => {
               <Routes>
                 <Route path="/" exact element={<HomeScreen />} />
                 <Route path="/event/:id" element={<EventScreen />} />
-                <Route path="/cart" element=
-                  {<CartScreen />} />
-                <Route path="/cart/:id" element=
-                  {<CartScreen />} />
-                <Route path="/login" element=
-                {<LoginScreen />} />
+                <Route path="/cart" element={<CartScreen />} />
+                <Route path="/login" element={<LoginScreen />} />
+                <Route path='/profile' element={<ProfileScreen />} />
+                <Route path='/shipping' element={<ShippingScreen />} />
+                <Route path='/placeorder' element={<PlaceOrderScreen />} />
                 <Route path="/register" element={<RegisterScreen />} />
               </Routes>
             </Container>

@@ -1,5 +1,5 @@
 import express from 'express'
-import { authUser } from '../controllers/userController.js'
+import { authUser, getUserProfile, updateUserProfile, registerUser } from '../controllers/userController.js'
 import { protect } from '../middleware/authMiddleware.js'
 
 const router = express.Router()
@@ -9,5 +9,17 @@ const router = express.Router()
 //@access public
 
 router.post('/login', authUser)
+
+//@desc Register a new user
+//@route POST /api/users
+//@access public
+router.route('/').post(registerUser)
+
+//@desc Get user profile
+//@route GET /api/users/profile
+//@access private
+router.route('/profile')
+.get(protect, getUserProfile)
+.get(protect, updateUserProfile)
 
 export default router
