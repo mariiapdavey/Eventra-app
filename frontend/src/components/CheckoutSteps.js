@@ -43,3 +43,5 @@ const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
         </Nav>
     )
 }
+
+export default CheckoutSteps
