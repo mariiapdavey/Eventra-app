@@ -20,10 +20,12 @@ useEffect(() => {
   dispatch(listEventDetails(params.id))
 }, [dispatch, params.id])
 
-//update quantity when event changes
 useEffect(() => {
-  if (event && event.countInStock) {
-    setQty(1)
+  if (event) {
+    console.log('Count in Stock:', event.countInStock);
+    if (event.countInStock) {
+      setQty(1)
+    }
   }
 }, [event])
 
