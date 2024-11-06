@@ -46,13 +46,13 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
         }
 
         const {data} = await axios.get(`/api/orders/${id}`, config)
-
+        console.log("Fetched order details:", data) //added for debugging
         dispatch({
             type: ORDER_DETAILS_SUCCESS,
             payload: data
         })
 
-    }catch (error) {
+    } catch (error) {
         dispatch({
             type: ORDER_DETAILS_FAIL,
             payload: 
@@ -73,10 +73,10 @@ export const payOrder = (orderId, paymentResult) => async (dispatch, getState) =
         const config = {
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer${userInfo.token}`
+                'Authorization': `Bearer ${userInfo.token}`
             }
         }
-        const {data} = await axios.put('/api/orders/${orderId}/pay', paymentResult, config)
+        const {data} = await axios.put(`/api/orders/${orderId}/pay`, paymentResult, config) //fixed backticks
 
         dispatch({
             type: ORDER_PAY_SUCCESS,

@@ -37,8 +37,9 @@ const OrderScreen = () => {
     }
 
     useEffect(() => {
+        console.log('Order:', order) //added line for debugging
         dispatch(getPaypalKey())
-        if (!order || successPay){
+        if (!order || order._id !== orderId || successPay){
         dispatch({type: ORDER_PAY_RESET})
         dispatch(getOrderDetails(orderId))
         }
