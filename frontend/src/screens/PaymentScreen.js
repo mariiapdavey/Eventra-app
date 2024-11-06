@@ -8,9 +8,10 @@ import { savePaymentMethod } from '../actions/cartActions'
 
 
 const PaymentScreen = () => {
-    const navigate = useNavigate
+    const navigate = useNavigate() //added parentheses
     const cart = useSelector((state) => state.cart)
     const { shippingAddress } = cart 
+    
     if (!shippingAddress) { 
         navigate('/shipping')
     }
