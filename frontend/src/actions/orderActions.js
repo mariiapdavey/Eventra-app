@@ -82,7 +82,7 @@ export const payOrder = (orderId, paymentResult) => async (dispatch, getState) =
             type: ORDER_PAY_SUCCESS,
             payload: data
         })
-    }catch {error} {
+    }catch (error) { //changed from curly braces to parentheses around error
         dispatch({
             type: ORDER_PAY_FAIL,
             payload:

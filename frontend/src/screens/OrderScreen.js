@@ -14,7 +14,10 @@ const OrderScreen = () => {
 
     const dispatch = useDispatch()
     const orderDetails = useSelector((state) => state.orderDetails)
-    const {order, loading, error} = orderDetails    
+    const {order, loading, error} = orderDetails  
+    
+    const orderPay = useSelector((state) => state.orderPay) //added these 2 lines
+    const {loading: loadingPay, success: successPay, paypalkey} = orderPay 
 
     let updatedOrder = {}
     if (!loading){
