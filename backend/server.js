@@ -28,14 +28,6 @@ if (process.env.NODE_ENV === 'production'){
 }
 
 app.use(errorHandler)
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-app.listen(5001, console.log('Server is now running on port 5001'))
-=======
-app.listen(8000, console.log('Server is now running on port 8000'))
->>>>>>> master
-=======
 const port = process.env.PORT
 app.listen(port, console.log(`Server is now running on port ${port}`))
->>>>>>> master
+
