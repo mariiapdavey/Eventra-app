@@ -56,7 +56,13 @@ export const orderPayReducer = (state = {}, action) => {
             return {
                 loading: false,
                 error: action.payload
-            }   
+            }  
+        case PAYPAL_KEY:
+            return{
+                loading:false,
+                paypalkey: action.payload
+            }
+            
         case ORDER_PAY_RESET:
             return {
                 ...state,
@@ -65,11 +71,7 @@ export const orderPayReducer = (state = {}, action) => {
                 order: {}
             }
 
-        case PAYPAL_KEY:
-            return{
-                loading:false,
-                paypalkey: action.payload
-            }
+        
         default:
             return state    
     }

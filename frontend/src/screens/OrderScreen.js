@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import { Link, useParams } from "react-router-dom"
+import { PayPalScriptProvider, PayPalButtons} from "@paypal/react-paypal-js"
 import { Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
-import { getOrderDetails } from '../actions/orderActions'
-
-
+import { getOrderDetails, getPaypalKey, payOrder } from '../actions/orderActions'
+import { ORDER_PAY_RESET } from '../constants/orderConstants'
 
 const OrderScreen = () => {
     const params = useParams()
@@ -34,7 +34,7 @@ const OrderScreen = () => {
     }
 
     useEffect(() => {
-        
+        dispatch(getPaypalKey())
         if (!order || successPay){
         dispatch({type: ORDER_PAY_RESET})
         dispatch(getOrderDetails(orderId))
@@ -151,7 +151,7 @@ const OrderScreen = () => {
                 </ListGroup.Item>
                 {!order.isPaid && (
                     <ListGroup.Item>
-                    {loadingPay && <Loader />}
+                    { loadingPay && <Loader />}
                         <PayPalScriptProvider options={{ "client-id": paypalkey,
                         components: "buttons",
                         currency: "USD" }}>
