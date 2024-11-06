@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import {Row, Col, Image, Card, Button, ListGroup, Form} from 'react-bootstrap';
 import { listEventDetails } from '../actions/eventActions';
+import { addToCart } from '../actions/cartActions';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 
@@ -10,14 +11,22 @@ const EventScreen = () => {
   const [qty, setQty] = useState(1);
   const params = useParams();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const navigate = useNavigate();  
 
-  useEffect (() =>{
-    dispatch(listEventDetails(params.id))
-  }, [dispatch, params])
-
-const eventDetails = useSelector ((state) => state.eventDetails)
+const eventDetails = useSelector((state) => state.eventDetails)
 const {loading, event, error} = eventDetails
+
+useEffect(() => {
+  dispatch(listEventDetails(params.id))
+}, [dispatch, params.id])
+
+useEffect(() => {
+  if (event) {
+    if (event.countInStock) {
+      setQty(1)
+    }
+  }
+}, [event])
 
 const addToCartHandler = () => {
   navigate(`/cart/${params.id}?qty=${qty}`)
@@ -87,7 +96,7 @@ const addToCartHandler = () => {
                               <Form.Control
                                 as='select'
                                 value={qty}
-                                onChange={e => setQty(e.target.value)}
+                                onChange={e => setQty(Number(e.target.value))}
                                 >
                                 {
                                   [...Array(event.countInStock).keys()].map(x => (

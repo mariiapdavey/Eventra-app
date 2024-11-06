@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {Link, useNavigate, useParams, useLocation } from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
-import {Row, Col, ListGroup, Image, Form, Button, Card, ListGroupItem } from 'react-bootstrap'
+import {Row, Col, ListGroup, Image, Form, Button, Card} from 'react-bootstrap'
 import {addToCart, removeFromCart} from '../actions/cartActions'
 import Message from '../components/Message'
 
@@ -105,7 +105,7 @@ const checkoutHandler = () => {
               <Button
                 type='button'
                 className='btn-block'
-                disabled={cartItems.lenght === 0}
+                disabled={cartItems.length === 0}
                 onClick={checkoutHandler}
                 >
                   Proceed To Checkout

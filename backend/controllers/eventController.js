@@ -17,5 +17,4 @@ export const getEventById = asyncHandler(async (req, res) => {
   }
 })
 
-export {getEvents, getEventById}
-//readded export functions because they are imported in eventRoutes.js
+
