@@ -20,20 +20,20 @@ const OrderScreen = () => {
     const {loading: loadingPay, success: successPay, paypalkey} = orderPay 
 
     let updatedOrder = {}
-    if (!loading){
+    if (!loading && order){ // <-- Updated condition to ensure order is available
         const addDecimals = (num) => {
-        return (Math.round(num*100)/100).toFixed(2)
+        return (Math.round(num*100) / 100).toFixed(2)
         }
 
         updatedOrder.itemsPrice = addDecimals(
         order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)
         )
 
-        updatedOrder.totalPrice = (
+        updatedOrder.totalPrice = addDecimals(
         Number(updatedOrder.itemsPrice) +
-        Number(order.shippingPrice) + 
-        Number(order.taxPrice)
-        ).toFixed(2)
+        Number(order.shippingPrice || 0) + // <-- Default to 0 if shippingPrice is undefined
+        Number(order.taxPrice || 0) // <-- Default to 0 if taxPrice is undefined
+        )
     }
 
     useEffect(() => {

@@ -1,5 +1,6 @@
 import asyncHandler from "express-async-handler"
 import Order from '../models/orderModel.js'
+import User from '../models/userModel.js'
 
 const addOrderItems = asyncHandler(async (req, res) => {
     const {
@@ -32,13 +33,18 @@ const addOrderItems = asyncHandler(async (req, res) => {
 })
 
 const getOrderById = asyncHandler(async (req, res) => {
-    const order = await Order.findById(req.params.id).populate('user','name email')
+    try {
+        const order = await Order.findById(req.params.id).populate('user','name email')
 
-    if (order){
+    if (order) {
         res.json(order)
     } else {
         res.status(404)
         throw new Error('Order not found')
+        }
+    } catch (error) {
+    console.error("Error retrieving order:", error.message)
+    res.status(500).json({message: "Failed to retrieve order."})
     }
 })
 
