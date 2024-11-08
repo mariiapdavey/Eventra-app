@@ -55,9 +55,9 @@ export const getUserDetails = (id) => async(dispatch, getState) => {
         } = getState()
 
         const config = {
-            header: {
+            headers: { //fixed typo from header to headers
                 'Content-Type': 'application/json',
-                Authorization: 'Bearer ${userInfo.token}',
+                Authorization: `Bearer ${userInfo.token}`, //fixed typo to change single quotes to backticks
             },
         }
 
