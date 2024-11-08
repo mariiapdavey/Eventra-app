@@ -39,7 +39,8 @@ const initialState = {
          shippingAddress: shippingAddressFromStorage,
          paymentMethod: paymentMethodFromStorage
         },
-    userLogin: {userInfo: userInfoFromStorage}
+    userLogin: {userInfo: userInfoFromStorage}, 
+    userDetails: { user: {}}
 }
 
 const store = configureStore ({
