@@ -20,6 +20,6 @@ router.route('/').post(registerUser)
 //@access private
 router.route('/profile')
 .get(protect, getUserProfile)
-.get(protect, updateUserProfile)
+.put(protect, updateUserProfile) //fixed bug, changed from .get to .put
 
 export default router

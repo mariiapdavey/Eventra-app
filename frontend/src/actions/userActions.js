@@ -55,9 +55,9 @@ export const getUserDetails = (id) => async(dispatch, getState) => {
         } = getState()
 
         const config = {
-            header: {
+            headers: { //fixed typo from header to headers
                 'Content-Type': 'application/json',
-                Aithorization: 'Bearer ${userInfo.token}',
+                Authorization: `Bearer ${userInfo.token}`, //fixed typo to change single quotes to backticks
             },
         }
 
@@ -136,7 +136,7 @@ export const register = (name, email, password) => async (dispatch) => {
 
         dispatch({
             type: USER_LOGIN_SUCCESS,
-            payload: data
+            payload: data,
         })
 
         localStorage.setItem('userInfo', JSON.stringify(data))
@@ -145,7 +145,7 @@ export const register = (name, email, password) => async (dispatch) => {
             type: USER_REGISTER_FAIL,
             payload: error.response && error.response.data.message
                 ? error.response.data.message
-                : error.message
+                : error.message,
         })
     }
 }

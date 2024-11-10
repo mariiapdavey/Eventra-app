@@ -20,7 +20,7 @@ export const orderCreateReducer = (state = {}, action) => {
     }
 }
 
-export const orderDetailsReducer = (state = {loading: true}, action) => {
+export const orderDetailsReducer = (state = {loading: true }, action) => {
     switch(action.type){
         case ORDER_DETAILS_REQUEST:
             return {
@@ -58,7 +58,7 @@ export const orderPayReducer = (state = {}, action) => {
                 error: action.payload
             }  
         case PAYPAL_KEY:
-            return{
+            return {
                 loading:false,
                 paypalkey: action.payload
             }
