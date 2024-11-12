@@ -1,6 +1,5 @@
 import asyncHandler from "express-async-handler"
 import Order from '../models/orderModel.js'
-import User from '../models/userModel.js'
 
 const addOrderItems = asyncHandler(async (req, res) => {
     const {
@@ -68,4 +67,16 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
     }
 })
 
-export {addOrderItems, getOrderById, updateOrderToPaid}
+const getMyOrders = asyncHandler(async (req, res) => {
+    try {
+    const orders = await Order.find({ 
+        user: req.user._id})
+        res.json(orders)
+    } catch (error) {
+        res.status(500).json({
+            message: 'Failed to fetch orders'
+        })
+    }
+})
+
+export {addOrderItems, getOrderById, updateOrderToPaid, getMyOrders}
