@@ -1,4 +1,4 @@
-import { ORDER_CREATE_FAIL, ORDER_CREATE_REQUEST, ORDER_CREATE_SUCCESS, ORDER_DETAILS_FAIL, ORDER_DETAILS_REQUEST, ORDER_DETAILS_SUCCESS, ORDER_PAY_FAIL, ORDER_PAY_REQUEST, ORDER_PAY_SUCCESS, ORDER_PAY_RESET, PAYPAL_KEY } from "../constants/orderConstants"
+import { ORDER_CREATE_FAIL, ORDER_CREATE_REQUEST, ORDER_CREATE_SUCCESS, ORDER_DETAILS_FAIL, ORDER_DETAILS_REQUEST, ORDER_DETAILS_SUCCESS, ORDER_PAY_FAIL, ORDER_PAY_REQUEST, ORDER_PAY_SUCCESS, ORDER_PAY_RESET, PAYPAL_KEY, ORDER_RESET } from "../constants/orderConstants"
 //added ORDER_PAY_RESET to import
 export const orderCreateReducer = (state = {}, action) => {
     switch(action.type){
@@ -15,6 +15,8 @@ export const orderCreateReducer = (state = {}, action) => {
                 loading: false,
                 error: action.payload
             }
+        case ORDER_RESET:
+            return{} //reset state to empty after an order
         default:
             return state
     }
