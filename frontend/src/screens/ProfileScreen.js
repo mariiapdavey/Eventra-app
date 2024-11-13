@@ -126,7 +126,10 @@ const ProfileScreen = () => {
       </tr>
     </thead>
     <tbody>
-      {orders.map(order => (
+      {orders
+      .slice() //creates copy of orders array
+      .sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt)) //sorts in descending created date order
+      .map(order => ( //renders each sorted array in table
         <tr key={order._id}>
           <td>{order._id}</td>
           <td>{order.createdAt.substring(0, 10)}</td>
